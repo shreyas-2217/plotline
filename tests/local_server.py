@@ -47,11 +47,9 @@ class H(SimpleHTTPRequestHandler):
         self._send(resp["statusCode"], resp["body"])
 
     def translate_path(self, path):
-        # local aliases matching the Vercel routes
+        # local alias: /samples/x.csv -> /data/x.csv (kept for old links)
         if path.startswith("/samples/"):
             path = "/data/" + path[len("/samples/"):]
-        elif path.startswith("/css/") or path.startswith("/js/"):
-            path = "/web" + path
         return super().translate_path(path)
 
     def log_message(self, *a):

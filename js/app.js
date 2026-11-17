@@ -244,7 +244,7 @@ document.querySelectorAll(".chip").forEach((chip) => {
   chip.addEventListener("click", async () => {
     statusEl.textContent = `Fetching sample (${chip.dataset.sample})…`;
     try {
-      const res = await fetch(`/samples/${chip.dataset.sample}.csv`);
+      const res = await fetch(`/data/${chip.dataset.sample}.csv`);
       const buf = await res.arrayBuffer();
       handleFile(new File([buf], `${chip.dataset.sample}.csv`, { type: "text/csv" }));
     } catch {
