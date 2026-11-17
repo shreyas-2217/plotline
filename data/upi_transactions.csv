@@ -1,0 +1,242 @@
+date,description,category,amount
+2026-06-03,Zomato — Food,Food,131.63
+2026-06-03,Zomato — Groceries,Groceries,815.90
+2026-06-04,Amazon — Food,Food,114.67
+2026-06-04,Amazon — Shopping,Shopping,279.61
+2026-06-04,Namma Metro — Groceries,Groceries,667.03
+2026-06-05,Swiggy — Transport,Transport,71.73
+2026-06-06,BigBasket — Groceries,Groceries,385.40
+2026-06-07,Zomato — Health,Health,672.21
+2026-06-08,IRCTC — Food,Food,393.57
+2026-06-08,Zomato — Entertainment,Entertainment,527.03
+2026-06-08,IRCTC — Travel,Travel,3717.54
+2026-06-09,Swiggy — Shopping,Shopping,2313.72
+2026-06-09,Zomato — Groceries,Groceries,722.99
+2026-06-10,PVR — Entertainment,Entertainment,303.28
+2026-06-11,IRCTC — Food,Food,211.45
+2026-06-11,Zomato — Groceries,Groceries,653.17
+2026-06-12,PVR — Shopping,Shopping,934.43
+2026-06-13,Amazon — Food,Food,422.39
+2026-06-13,Swiggy — Groceries,Groceries,777.42
+2026-06-13,Airtel — Food,Food,91.88
+2026-06-14,Airtel — Food,Food,158.06
+2026-06-14,PVR — Food,Food,264.72
+2026-06-14,IRCTC — Food,Food,131.66
+2026-06-15,Amazon — Entertainment,Entertainment,315.62
+2026-06-15,PVR — Travel,Travel,1675.82
+2026-06-15,Zomato — Food,Food,97.43
+2026-06-16,Namma Metro — Bills,Bills,1932.18
+2026-06-18,IRCTC — Transport,Transport,179.42
+2026-06-18,Swiggy — Travel,Travel,7816.63
+2026-06-18,IRCTC — Groceries,Groceries,209.35
+2026-06-19,PVR — Food,Food,240.86
+2026-06-19,IRCTC — Food,Food,347.17
+2026-06-20,IRCTC — Shopping,Shopping,519.23
+2026-06-21,Swiggy — Food,Food,362.13
+2026-06-22,Airtel — Shopping,Shopping,535.60
+2026-06-22,IRCTC — Entertainment,Entertainment,592.27
+2026-06-23,Zomato — Food,Food,404.86
+2026-06-25,BigBasket — Entertainment,Entertainment,685.91
+2026-06-25,BigBasket — Food,Food,255.85
+2026-06-25,Namma Metro — Food,Food,402.80
+2026-06-26,Amazon — Health,Health,1383.95
+2026-06-27,Airtel — Transport,Transport,130.75
+2026-06-27,Zomato — Transport,Transport,107.64
+2026-06-28,Amazon — Food,Food,205.09
+2026-06-29,Swiggy — Food,Food,341.90
+2026-06-30,Airtel — Food,Food,91.62
+2026-07-02,BigBasket — Food,Food,259.60
+2026-07-03,Namma Metro — Food,Food,255.00
+2026-07-03,Namma Metro — Food,Food,115.86
+2026-07-03,Swiggy — Transport,Transport,91.67
+2026-07-06,Zomato — Groceries,Groceries,744.46
+2026-07-06,PVR — Food,Food,150.38
+2026-07-06,PVR — Food,Food,147.89
+2026-07-07,Zomato — Entertainment,Entertainment,108.25
+2026-07-11,Amazon — Food,Food,259.69
+2026-07-12,Swiggy — Health,Health,379.88
+2026-07-12,PVR — Travel,Travel,2754.23
+2026-07-12,PVR — Food,Food,337.74
+2026-07-13,Swiggy — Food,Food,160.55
+2026-07-15,BigBasket — Food,Food,296.15
+2026-07-15,BigBasket — Food,Food,267.90
+2026-07-18,Amazon — Transport,Transport,171.24
+2026-07-21,Airtel — Bills,Bills,1421.76
+2026-07-21,Airtel — Health,Health,447.24
+2026-07-21,IRCTC — Food,Food,226.44
+2026-07-22,Zomato — Transport,Transport,142.78
+2026-07-22,Zomato — Food,Food,309.83
+2026-07-22,IRCTC — Food,Food,158.87
+2026-07-23,Amazon — Health,Health,1597.47
+2026-07-24,IRCTC — Food,Food,242.13
+2026-07-24,Swiggy — Bills,Bills,2371.27
+2026-07-25,BigBasket — Health,Health,276.10
+2026-07-25,BigBasket — Food,Food,409.19
+2026-07-26,Airtel — Food,Food,157.93
+2026-07-26,IRCTC — Food,Food,314.67
+2026-07-27,Swiggy — Food,Food,416.02
+2026-07-27,IRCTC — Food,Food,236.72
+2026-07-27,BigBasket — Food,Food,203.42
+2026-07-28,Namma Metro — Food,Food,243.48
+2026-07-28,BigBasket — Shopping,Shopping,535.62
+2026-07-30,BigBasket — Bills,Bills,483.21
+2026-07-30,Swiggy — Food,Food,214.92
+2026-07-31,Zomato — Food,Food,172.33
+2026-07-31,Namma Metro — Transport,Transport,113.98
+2026-08-01,BigBasket — Health,Health,502.45
+2026-08-02,Airtel — Entertainment,Entertainment,75.86
+2026-08-03,Amazon — Entertainment,Entertainment,613.00
+2026-08-03,Zomato — Food,Food,371.33
+2026-08-03,PVR — Transport,Transport,35.81
+2026-08-04,Airtel — Food,Food,419.83
+2026-08-05,Amazon — Entertainment,Entertainment,617.65
+2026-08-05,Airtel — Food,Food,151.46
+2026-08-06,IRCTC — Entertainment,Entertainment,678.81
+2026-08-06,Airtel — Transport,Transport,106.41
+2026-08-09,IRCTC — Food,Food,436.14
+2026-08-09,Airtel — Food,Food,300.73
+2026-08-10,Zomato — Transport,Transport,177.64
+2026-08-10,IRCTC — Transport,Transport,116.49
+2026-08-12,Amazon — Food,Food,422.46
+2026-08-12,Airtel — Transport,Transport,40.50
+2026-08-12,Zomato — Bills,Bills,1642.62
+2026-08-13,Airtel — Shopping,Shopping,2200.68
+2026-08-13,BigBasket — Transport,Transport,74.35
+2026-08-14,BigBasket — Transport,Transport,171.05
+2026-08-15,IRCTC — Transport,Transport,155.06
+2026-08-15,Airtel — Food,Food,239.06
+2026-08-16,PVR — Transport,Transport,131.34
+2026-08-16,BigBasket — Groceries,Groceries,868.67
+2026-08-16,Airtel — Bills,Bills,788.52
+2026-08-18,Amazon — Groceries,Groceries,295.22
+2026-08-19,PVR — Food,Food,170.59
+2026-08-21,Amazon — Transport,Transport,124.46
+2026-08-21,Namma Metro — Groceries,Groceries,419.50
+2026-08-21,Swiggy — Food,Food,322.74
+2026-08-23,PVR — Food,Food,377.52
+2026-08-23,Zomato — Food,Food,172.20
+2026-08-23,Airtel — Transport,Transport,150.21
+2026-08-24,Namma Metro — Bills,Bills,1768.37
+2026-08-24,BigBasket — Entertainment,Entertainment,410.64
+2026-08-24,IRCTC — Groceries,Groceries,490.25
+2026-08-25,PVR — Entertainment,Entertainment,237.48
+2026-08-26,IRCTC — Food,Food,108.67
+2026-08-27,Zomato — Food,Food,198.29
+2026-08-28,BigBasket — Food,Food,221.72
+2026-08-29,PVR — Food,Food,230.81
+2026-08-30,Namma Metro — Food,Food,388.17
+2026-08-30,Swiggy — Health,Health,1092.94
+2026-08-30,Namma Metro — Entertainment,Entertainment,549.98
+2026-08-31,Namma Metro — Food,Food,210.15
+2026-08-31,Namma Metro — Entertainment,Entertainment,670.20
+2026-08-31,Amazon — Shopping,Shopping,2403.90
+2026-09-01,Swiggy — Food,Food,241.26
+2026-09-01,Namma Metro — Transport,Transport,130.33
+2026-09-01,BigBasket — Groceries,Groceries,775.59
+2026-09-03,Zomato — Bills,Bills,1641.75
+2026-09-03,PVR — Bills,Bills,455.32
+2026-09-03,Airtel — Food,Food,176.26
+2026-09-04,Namma Metro — Transport,Transport,80.63
+2026-09-05,IRCTC — Groceries,Groceries,768.90
+2026-09-05,Swiggy — Entertainment,Entertainment,361.00
+2026-09-06,Swiggy — Food,Food,105.39
+2026-09-06,Amazon — Groceries,Groceries,860.70
+2026-09-08,Zomato — Food,Food,255.22
+2026-09-09,Airtel — Transport,Transport,68.44
+2026-09-10,Zomato — Bills,Bills,2318.40
+2026-09-11,Swiggy — Travel,Travel,1418.84
+2026-09-12,Namma Metro — Shopping,Shopping,2924.08
+2026-09-12,Zomato — Transport,Transport,137.25
+2026-09-13,Zomato — Food,Food,365.82
+2026-09-15,Zomato — Shopping,Shopping,2184.56
+2026-09-15,Namma Metro — Shopping,Shopping,1223.69
+2026-09-16,PVR — Food,Food,435.49
+2026-09-16,IRCTC — Groceries,Groceries,459.68
+2026-09-16,PVR — Bills,Bills,2219.14
+2026-09-17,IRCTC — Transport,Transport,139.65
+2026-09-17,Zomato — Transport,Transport,66.82
+2026-09-17,PVR — Food,Food,246.80
+2026-09-18,Airtel — Transport,Transport,104.15
+2026-09-18,IRCTC — Food,Food,158.48
+2026-09-18,IRCTC — Transport,Transport,162.05
+2026-09-20,PVR — Food,Food,346.43
+2026-09-21,PVR — Groceries,Groceries,623.80
+2026-09-22,Amazon — Groceries,Groceries,192.58
+2026-09-22,Airtel — Transport,Transport,66.50
+2026-09-22,Namma Metro — Transport,Transport,109.64
+2026-09-23,IRCTC — Transport,Transport,98.06
+2026-09-23,Amazon — Food,Food,124.64
+2026-09-24,BigBasket — Food,Food,278.27
+2026-09-24,IRCTC — Food,Food,353.28
+2026-09-25,IRCTC — Travel,Travel,7577.34
+2026-09-25,Swiggy — Food,Food,146.39
+2026-09-26,IRCTC — Food,Food,440.49
+2026-09-27,Zomato — Bills,Bills,1843.78
+2026-09-29,BigBasket — Transport,Transport,96.07
+2026-09-29,PVR — Travel,Travel,2646.07
+2026-10-02,Swiggy — Shopping,Shopping,1931.06
+2026-10-02,IRCTC — Food,Food,380.12
+2026-10-02,Namma Metro — Food,Food,171.83
+2026-10-03,PVR — Groceries,Groceries,416.69
+2026-10-04,IRCTC — Entertainment,Entertainment,693.62
+2026-10-04,Zomato — Shopping,Shopping,380.69
+2026-10-05,Zomato — Bills,Bills,745.45
+2026-10-06,BigBasket — Food,Food,284.24
+2026-10-08,IRCTC — Transport,Transport,119.07
+2026-10-08,IRCTC — Food,Food,186.60
+2026-10-08,Amazon — Groceries,Groceries,474.14
+2026-10-09,Amazon — Groceries,Groceries,607.55
+2026-10-09,BigBasket — Transport,Transport,111.68
+2026-10-10,BigBasket — Entertainment,Entertainment,105.70
+2026-10-10,IRCTC — Groceries,Groceries,584.13
+2026-10-11,Namma Metro — Food,Food,334.81
+2026-10-11,PVR — Health,Health,950.80
+2026-10-11,Namma Metro — Transport,Transport,119.71
+2026-10-12,Amazon — Bills,Bills,208.20
+2026-10-12,Swiggy — Travel,Travel,7605.65
+2026-10-13,BigBasket — Shopping,Shopping,2489.33
+2026-10-13,IRCTC — Transport,Transport,127.73
+2026-10-14,PVR — Travel,Travel,4205.02
+2026-10-16,Zomato — Transport,Transport,80.00
+2026-10-16,PVR — Entertainment,Entertainment,271.07
+2026-10-16,Swiggy — Food,Food,429.72
+2026-10-17,Zomato — Food,Food,173.39
+2026-10-17,Swiggy — Travel,Travel,3935.49
+2026-10-17,Namma Metro — Bills,Bills,1370.84
+2026-10-19,PVR — Shopping,Shopping,2067.90
+2026-10-20,BigBasket — Groceries,Groceries,278.78
+2026-10-20,PVR — Health,Health,844.80
+2026-10-20,Amazon — Food,Food,440.06
+2026-10-21,Namma Metro — Transport,Transport,32.05
+2026-10-23,PVR — Travel,Travel,8259.90
+2026-10-25,IRCTC — Shopping,Shopping,2349.81
+2026-10-26,Amazon — Entertainment,Entertainment,687.36
+2026-10-26,Amazon — Transport,Transport,51.70
+2026-10-26,BigBasket — Health,Health,964.01
+2026-10-28,Airtel — Groceries,Groceries,786.44
+2026-10-28,Swiggy — Health,Health,963.15
+2026-10-29,PVR — Groceries,Groceries,773.23
+2026-10-29,PVR — Entertainment,Entertainment,345.79
+2026-10-30,Namma Metro — Transport,Transport,144.43
+2026-10-30,Amazon — Transport,Transport,78.27
+2026-10-31,Namma Metro — Shopping,Shopping,900.69
+2026-11-02,Namma Metro — Groceries,Groceries,670.08
+2026-11-02,BigBasket — Transport,Transport,129.55
+2026-11-03,Airtel — Travel,Travel,1573.09
+2026-11-03,PVR — Entertainment,Entertainment,619.48
+2026-11-03,Swiggy — Food,Food,416.86
+2026-11-04,BigBasket — Transport,Transport,128.22
+2026-11-06,Namma Metro — Groceries,Groceries,326.72
+2026-11-06,Namma Metro — Bills,Bills,2066.47
+2026-11-06,PVR — Health,Health,1165.56
+2026-11-09,Amazon — Bills,Bills,7110.69
+2026-11-11,Zomato — Travel,Travel,22282.06
+2026-11-11,Swiggy — Transport,Transport,429.12
+2026-11-11,IRCTC — Food,Food,1198.63
+2026-11-12,Namma Metro — Transport,Transport,165.87
+2026-11-12,BigBasket — Shopping,Shopping,8248.19
+2026-11-13,Amazon — Food,Food,1287.07
+2026-11-14,PVR — Health,Health,1098.56
+2026-11-14,Swiggy — Bills,Bills,3788.91
+2026-11-14,IRCTC — Entertainment,Entertainment,1144.84
+2026-11-15,IRCTC — Food,Food,1375.16
