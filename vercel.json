@@ -1,9 +1,10 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "builds": [
-    { "src": "api/story.py", "use": "@vercel/python" },
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
+  "functions": {
+    "api/story.py": {
+      "runtime": "python3.12"
+    }
+  },
   "routes": [
     { "src": "/css/(.*)", "dest": "/web/css/$1" },
     { "src": "/js/(.*)", "dest": "/web/js/$1" },

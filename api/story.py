@@ -1,6 +1,10 @@
-"""Vercel serverless function: POST a CSV file, get the verified story JSON back.
+"""Vercel serverless function: POST a CSV/XLSX file, get the verified story JSON.
 
-Kept dependency-free (stdlib only) so the Vercel Python runtime runs it cold.
+Uses the Vercel Python runtime entrypoint convention: a top-level `app`
+(WSGI/ASGI-style) is auto-detected. Kept stdlib-only.
+
+Request:  POST /api/story, raw file bytes in the body (any content type)
+Response: story JSON (or a refusal JSON for files too small to support claims)
 """
 
 from __future__ import annotations
@@ -15,13 +19,6 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 from server.story_engine import profile_bytes, read_csv_bytes, Column, TooBig
 from server.xlsx_reader import read_xlsx_bytes, is_xlsx
 from server.narrative import build_story
-
-
-def _read_table(raw):
-    """(headers, rows) from either an xlsx or a csv/tsv."""
-    if is_xlsx(raw):
-        return read_xlsx_bytes(raw)
-    return read_csv_bytes(raw)
 
 
 def make_columns(profile, headers):
@@ -48,31 +45,49 @@ def make_columns(profile, headers):
     return cols
 
 
-def handler(request):
-    method = getattr(request, "method", None) or request.get("method")
-    if str(method).upper() != "POST":
+def _read_table(raw):
+    """(headers, rows) from either an xlsx or a csv/tsv."""
+    if is_xlsx(raw):
+        return read_xlsx_bytes(raw)
+    return read_csv_bytes(raw)
+
+
+def handle(request):
+    """Vercel Python request handler. `request` carries method + body bytes."""
+    try:
+        method = (getattr(request, "method", None) or request.get("method") or "").upper()
+    except Exception:
+        method = "POST"
+
+    if method != "POST":
         return {
             "statusCode": 405,
-            "headers": {"Allow": "POST"},
-            "body": json.dumps({"ok": False, "error": "POST a CSV file to this endpoint."}),
+            "headers": {"Allow": "POST", "Content-Type": "application/json"},
+            "body": json.dumps({"ok": False, "error": "POST a CSV or XLSX file to this endpoint."}),
         }
 
+    raw = None
     try:
-        raw = request["body"]  # bytes
+        raw = request["body"]
     except Exception:
-        raw = None
+        raw = getattr(request, "body", None)
+    if isinstance(raw, str):
+        raw = raw.encode("utf-8", "replace")
     if not raw:
         return {
             "statusCode": 400,
-            "body": json.dumps({"ok": False, "error": "No file received. Send multipart 'file' or raw CSV bytes."}),
+            "headers": {"Content-Type": "application/json"},
+            "body": json.dumps({"ok": False, "error": "No file received. Send raw CSV/XLSX bytes in the body."}),
         }
 
     try:
         profile = profile_bytes(raw)
     except TooBig as e:
-        return {"statusCode": 413, "body": json.dumps({"ok": False, "error": str(e)})}
+        return {"statusCode": 413, "headers": {"Content-Type": "application/json"},
+                "body": json.dumps({"ok": False, "error": str(e)})}
     except Exception as e:
-        return {"statusCode": 422, "body": json.dumps({"ok": False, "error": f"Could not read that as CSV: {e}"})}
+        return {"statusCode": 422, "headers": {"Content-Type": "application/json"},
+                "body": json.dumps({"ok": False, "error": f"Could not read that file: {e}"})}
 
     headers, rows = _read_table(raw)
 
@@ -80,6 +95,7 @@ def handler(request):
         # honesty response: not enough rows to support a story
         return {
             "statusCode": 200,
+            "headers": {"Content-Type": "application/json"},
             "body": json.dumps({
                 "ok": True,
                 "too_small": True,
@@ -96,10 +112,35 @@ def handler(request):
     columns = make_columns(profile, headers)
     story = build_story(headers, rows, columns, profile)
     story["profile"] = profile
-    return {"statusCode": 200, "body": json.dumps(story)}
+    return {
+        "statusCode": 200,
+        "headers": {"Content-Type": "application/json"},
+        "body": json.dumps(story),
+    }
 
 
-# --- Vercel Python runtime entry points -------------------------------------
+# --- entrypoints for every convention ----------------------------------------
 
-def main(request):
-    return handler(request)
+# modern Vercel Python runtime: request handler function
+handler = handle
+
+# WSGI-style app, in case the runtime probes for it
+def app(environ, start_response):
+    try:
+        length = int(environ.get("CONTENT_LENGTH") or 0)
+        raw = environ["wsgi.input"].read(length) if length else b""
+    except Exception:
+        raw = b""
+    result = handle({"method": environ.get("REQUEST_METHOD", "POST"), "body": raw})
+    body = result["body"].encode()
+    status = f"{result['statusCode']} OK" if result["statusCode"] == 200 else f"{result['statusCode']} Error"
+    headers = list((result.get("headers") or {}).items()) + [
+        ("Content-Type", "application/json"),
+        ("Content-Length", str(len(body))),
+    ]
+    start_response(status, headers)
+    return [body]
+
+
+application = app
+main = handle
