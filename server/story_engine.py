@@ -259,7 +259,12 @@ class TooBig(Exception):
 
 
 def profile_bytes(raw: bytes) -> dict:
-    headers, rows = read_csv_bytes(raw)
+    # dispatch by magic bytes: xlsx is a zip (PK..), otherwise treat as csv/tsv
+    from .xlsx_reader import read_xlsx_bytes, is_xlsx
+    if is_xlsx(raw):
+        headers, rows = read_xlsx_bytes(raw, max_rows=MAX_ROWS)
+    else:
+        headers, rows = read_csv_bytes(raw)
     if len(rows) > MAX_ROWS:
         raise TooBig(f"{len(rows)} rows exceeds the {MAX_ROWS:,} row limit.")
     if len(headers) > MAX_COLS:

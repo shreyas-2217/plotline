@@ -13,7 +13,15 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from server.story_engine import profile_bytes, read_csv_bytes, Column, TooBig
+from server.xlsx_reader import read_xlsx_bytes, is_xlsx
 from server.narrative import build_story
+
+
+def _read_table(raw):
+    """(headers, rows) from either an xlsx or a csv/tsv."""
+    if is_xlsx(raw):
+        return read_xlsx_bytes(raw)
+    return read_csv_bytes(raw)
 
 
 def make_columns(profile, headers):
@@ -66,7 +74,7 @@ def handler(request):
     except Exception as e:
         return {"statusCode": 422, "body": json.dumps({"ok": False, "error": f"Could not read that as CSV: {e}"})}
 
-    headers, rows = read_csv_bytes(raw)
+    headers, rows = _read_table(raw)
 
     if profile["too_small"]:
         # honesty response: not enough rows to support a story
