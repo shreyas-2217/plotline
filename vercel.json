@@ -1,10 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "routes": [
-    { "src": "/css/(.*)", "dest": "/web/css/$1" },
-    { "src": "/js/(.*)", "dest": "/web/js/$1" },
-    { "src": "/samples/(.*)", "dest": "/data/$1" },
-    { "src": "/api/story", "dest": "/api/story.py" },
-    { "src": "/(..*)", "dest": "/index.html" }
+  "rewrites": [
+    { "source": "/api/story", "destination": "/api/story.py" },
+    { "source": "/samples/(.*)", "destination": "/data/$1" },
+    { "source": "/((?!css/|js/|data/|api/|samples/).*)", "destination": "/index.html" }
   ]
 }
