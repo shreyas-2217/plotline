@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plotline — a story engine for CSVs</title>
+  <meta name="description" content="Drop a CSV. Get a scroll-driven story where every claim shows its receipt — the numbers are computed, never generated." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Inter:wght@400..700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="landing">
+    <header class="hero wrap">
+      <p class="eyebrow">Plotline</p>
+      <h1>Every spreadsheet is a <em>story</em> nobody has time to read.</h1>
+      <p class="lede">
+        Drop a CSV. Plotline profiles it, computes the numbers itself, and writes the story in
+        scroll-driven frames. Every claim carries a receipt — click it to see the exact stat,
+        how it was computed, and what it can't tell you.
+      </p>
+
+      <div class="uploader" id="drop" role="button" tabindex="0" aria-label="Upload a CSV file">
+        <p class="big">Drop a CSV here</p>
+        <p>or</p>
+        <button class="btn">Choose file</button>
+        <input type="file" id="file" accept=".csv,.tsv,text/csv" hidden />
+        <div class="samples">
+          <span class="chip" data-sample="upi_transactions">UPI transactions</span>
+          <span class="chip" data-sample="food_orders">Food orders</span>
+          <span class="chip" data-sample="messy">A messy file</span>
+          <span class="chip" data-sample="tiny">A tiny file (12 rows)</span>
+        </div>
+        <p id="drop-status" aria-live="polite"></p>
+      </div>
+
+      <p class="fineprint">
+        Runs locally in the browser request — files aren't stored. CSV/TSV up to 100k rows.
+        Identifier-looking columns (emails, phone numbers, IDs) are detected and <strong>excluded from the narrative</strong>.
+      </p>
+    </header>
+
+    <footer class="wrap">
+      <span>Plotline — a story engine for CSVs.</span>
+      <span>Engine: stdlib Python profiler + stats ledger. Every claim is verified against the ledger before it renders.</span>
+    </footer>
+  </div>
+
+  <main id="story" hidden></main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
