@@ -188,8 +188,29 @@ def looks_like_identifier(header: str, values: list) -> bool:
 # --------------------------------------------------------------------------
 
 def sniff_dialect(raw: bytes) -> csv.Dialect:
-    head = raw[:64_000].decode("utf-8", errors="replace")
-    return csv.Sniffer().sniff(head, delimiters=",;\t|") or csv.excel
+    """Pick a delimiter by voting across the first ~50 lines: the character
+    that (a) appears in the most lines and (b) yields a consistent column
+    count wins. Far more predictable than csv.Sniffer."""
+    head = raw[:256_000].decode("utf-8", errors="replace")
+    lines = [l for l in head.splitlines() if l.strip()][:50]
+    if not lines:
+        raise ValueError("empty file")
+    best, best_score = None, -1.0
+    for d in (",", ";", "\t", "|"):
+        counts = [l.count(d) for l in lines if l]
+        if not counts or max(counts) == 0:
+            continue
+        per_line = [c for c in counts if c > 0]
+        consistency = min(per_line) == max(per_line)
+        score = min(counts) * (2.0 if consistency else 1.0)
+        if score > best_score:
+            best, best_score = d, score
+    if best is None:
+        # maybe a single-column file — that's still a table to us
+        best = ","
+    dialect = csv.excel
+    dialect.delimiter = best
+    return dialect
 
 
 def read_csv_bytes(raw: bytes):
